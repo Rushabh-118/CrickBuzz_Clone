@@ -3,12 +3,26 @@ dotenv.config()
 import express from 'express';
 import axios from 'axios'
 import cors from 'cors';
+import path from 'path'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Enable CORS
 app.use(cors());
+
+// Serve frontend build when available
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const staticDir = path.join(__dirname, '..', 'Frontend', 'dist')
+if (fs.existsSync(staticDir)) {
+  app.use(express.static(staticDir))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(staticDir, 'index.html'))
+  })
+}
 
 // RapidAPI configuration
 const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY 
