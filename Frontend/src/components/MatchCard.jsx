@@ -32,7 +32,7 @@ const TeamLogo = ({ name, src, size = 'md' }) => {
       }}
     />
   ) : (
-    <div className={`${sizes[size]} rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center font-bold text-gray-700 border border-gray-300`}>
+    <div className={`${sizes[size]} rounded-full bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center font-bold text-gray-700 border border-gray-300`}>
       {(name || 'T').slice(0, 2).toUpperCase()}
     </div>
   );
@@ -160,7 +160,7 @@ const ExpandedMatchModal = ({ match, onClose }) => {
 
           {/* Score Cards */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-linear-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
               <h3 className="font-bold text-lg mb-4 flex items-center">
                 <TeamLogo name={team1.teamSName} src={team1.imageId} size="sm" />
                 <span className="ml-3">{team1.teamName}</span>
@@ -182,7 +182,7 @@ const ExpandedMatchModal = ({ match, onClose }) => {
               )}
             </div>
             
-            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-linear-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
               <h3 className="font-bold text-lg mb-4 flex items-center">
                 <TeamLogo name={team2.teamSName} src={team2.imageId} size="sm" />
                 <span className="ml-3">{team2.teamName}</span>
@@ -310,7 +310,7 @@ const MatchCard = ({ match }) => {
         onClick={() => setIsModalOpen(true)}
       >
         {/* Series Header */}
-        <div className="px-4 py-3 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+        <div className="px-4 py-3 bg-linear-to-r from-gray-50 to-gray-100 border-b border-gray-200">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>

@@ -86,7 +86,7 @@ const App = () => {
   const activeTabInfo = TABS.find(t => t.key === activeTab)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <div className="min-h-screen from-slate-50 to-slate-100">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,13 +94,13 @@ const App = () => {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
                   <Volleyball  className="w-6 h-6 text-white" />
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   CricLive
                 </h1>
                 <p className="text-xs text-slate-500">Real-time Cricket Scores</p>
@@ -120,7 +120,7 @@ const App = () => {
                       onClick={() => setActiveTab(tab.key)}
                       className={`relative px-4 py-2 rounded-lg flex items-center space-x-2 transition-all duration-200 ${
                         isActive 
-                          ? `bg-gradient-to-r ${tab.color} text-white shadow-lg transform -translate-y-0.5` 
+                          ? ` ${tab.color} text-white shadow-lg transform -translate-y-0.5` 
                           : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                       }`}
                     >
@@ -170,7 +170,7 @@ const App = () => {
               <div>
                 <div className="text-xs text-slate-500">Active Tab</div>
                 <div className="flex items-center space-x-2">
-                  <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeTabInfo.color}`}></div>
+                  <div className={`w-2 h-2 rounded-full ${activeTabInfo.color}`}></div>
                   <span className="font-semibold text-slate-900">{activeTabInfo.label}</span>
                 </div>
               </div>
@@ -213,7 +213,7 @@ const App = () => {
             <p className="text-slate-600 mb-6">{error}</p>
             <button
               onClick={handleRefresh}
-              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium"
+              className="px-6 py-2 from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium"
             >
               Try Again
             </button>
@@ -254,7 +254,7 @@ const App = () => {
         {/* Empty State */}
         {!loading && !error && matches.length === 0 && (
           <div className="max-w-md mx-auto py-16 text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl from-slate-100 to-slate-200 mb-6">
               <Volleyball  className="w-10 h-10 text-slate-400" />
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">No Matches Available</h3>
@@ -266,7 +266,7 @@ const App = () => {
             <div className="space-x-4">
               <button
                 onClick={handleRefresh}
-                className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium"
+                className="px-5 py-2.5 from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium"
               >
                 Refresh
               </button>
@@ -286,7 +286,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                 <Volleyball  className="w-4 h-4 text-white" />
               </div>
               <span className="font-semibold text-slate-900">CricLive</span>
@@ -306,8 +306,8 @@ const App = () => {
 
       {/* Background Decorations */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-gradient-to-br from-blue-100 to-transparent rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-gradient-to-br from-green-100 to-transparent rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute top-1/4 -left-32 w-64 h-64 from-blue-100 to-transparent rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-linear-to-br from-green-100 to-transparent rounded-full opacity-30 blur-3xl"></div>
       </div>
     </div>
   )
