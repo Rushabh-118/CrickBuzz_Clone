@@ -318,6 +318,3 @@ const App = () => {
 }
 
 export default App
-
-// Render PlayerStats modal at root-level so it overlays the app
-// (kept outside export to avoid interfering with SSR)
